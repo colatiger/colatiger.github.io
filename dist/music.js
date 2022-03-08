@@ -9,10 +9,10 @@ const ap = new APlayer({
     listMaxHeight: 60,
     audio: [
         {
-            name: '平凡的一天',
-            artist: '毛不易',
-            url: 'https://link.jscdn.cn/sharepoint/aHR0cHM6Ly8xZHJpdi1teS5zaGFyZXBvaW50LmNvbS86dTovZy9wZXJzb25hbC9zdG9yXzFkcml2X29ubWljcm9zb2Z0X2NvbS9FUkM2eDU3SngySkJ0N2V5YzJYUnRwd0JvWENLVUZGOFJBLTRmWV9jNDVSS213.m4a',
-            cover: 'https://p3.music.126.net/vmCcDvD1H04e9gm97xsCqg==/109951163350929740.jpg',
+            name: '这世界那么多人',
+            artist: '莫文蔚',
+            url: 'https://bafybeic7llshgt67yfr3czq7dldpybvnnxon3gyugoahx7whjyqpvudj4y.ipfs.dweb.link/莫文蔚-这世界那么大.mp3',
+            cover: 'https://bafybeigbaz3g72neej6iafnmsrw7wwrk64bp7s2zgyiibuhsimvz4ykgua.ipfs.dweb.link/780476de9982431088c999921001a214.jpg',
         },
         {
             name: '无赖',
