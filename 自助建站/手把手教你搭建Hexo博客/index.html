@@ -243,10 +243,10 @@
 <p>网站信息在_config.yml文件中，详情参照Hexo使用文档。</p>
 <h3 id="发布网站"><a href="#发布网站" class="headerlink" title="发布网站"></a>发布网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g	<span class="comment">#生成静态网站</span></span><br></pre></td></tr></table></figure>
 <p>网站目录为目录中的public目录。</p>
-<h3 id="后续使用"><a href="#后续使用" class="headerlink" title="后续使用"></a>后续使用</h3><p>之后每次发布文章，仅需将编辑好的md文件上传至建站所选目录下的source/_posts/下，之后使用hexo g 更新网站即可。</p>
+<h3 id="后续使用"><a href="#后续使用" class="headerlink" title="后续使用"></a>后续使用</h3><p>之后每次发布文章，仅需将编辑好的md文件上传至建站所选目录下的source&#x2F;_posts&#x2F;下，之后使用hexo g 更新网站即可。</p>
 <h3 id="注意：安装cnpm成功，终端却提示无法找到cnpm命令解决办法"><a href="#注意：安装cnpm成功，终端却提示无法找到cnpm命令解决办法" class="headerlink" title="注意：安装cnpm成功，终端却提示无法找到cnpm命令解决办法"></a>注意：安装cnpm成功，终端却提示无法找到cnpm命令解决办法</h3><p>出现这种问题应该是没正确建立软链，我们手动建立一下<br>先查到cnpm安装在哪</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo find / -name cnpm </span><br></pre></td></tr></table></figure>
-<p>如果查到安装位置为：/usr/local/bin/Node.js/bin/cnpm<br>建立软链</p>
+<p>如果查到安装位置为：&#x2F;usr&#x2F;local&#x2F;bin&#x2F;Node.js&#x2F;bin&#x2F;cnpm<br>建立软链</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/<span class="built_in">local</span>/bin/Node.js/bin/cnpm /usr/<span class="built_in">local</span>/bin/cnpm </span><br></pre></td></tr></table></figure>
 <p>问题即可解决。</p>
 
