@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.huwo.club","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Hexo 工作原理Hexo 博客程序并不像 WordPress 一样，Hexo 更像是一个静态站点生成器，即你配置好网站后，利用 Hexo 可以自动生成一个静态网站，其静态站点位置在网站目录下的 public 目录下。 准备工作准备工作包含两部分：安装 Git，安装 Node.js。&lt; !– more –&gt; 安装Git12yum install -y gitgit version  #">
+    <meta name="description" content="Hexo 工作原理Hexo 博客程序并不像 WordPress 一样，Hexo 更像是一个静态站点生成器，即你配置好网站后，利用 Hexo 可以自动生成一个静态网站，其静态站点位置在网站目录下的 public 目录下。 准备工作准备工作包含两部分：安装 Git，安装 Node.js。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="手把手教你搭建 Hexo 博客">
 <meta property="og:url" content="http://www.huwo.club/posts/build-hexo-blog.html">
 <meta property="og:site_name" content="虎窝博客">
-<meta property="og:description" content="Hexo 工作原理Hexo 博客程序并不像 WordPress 一样，Hexo 更像是一个静态站点生成器，即你配置好网站后，利用 Hexo 可以自动生成一个静态网站，其静态站点位置在网站目录下的 public 目录下。 准备工作准备工作包含两部分：安装 Git，安装 Node.js。&lt; !– more –&gt; 安装Git12yum install -y gitgit version  #">
+<meta property="og:description" content="Hexo 工作原理Hexo 博客程序并不像 WordPress 一样，Hexo 更像是一个静态站点生成器，即你配置好网站后，利用 Hexo 可以自动生成一个静态网站，其静态站点位置在网站目录下的 public 目录下。 准备工作准备工作包含两部分：安装 Git，安装 Node.js。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-08T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-24T14:04:39.640Z">
+<meta property="article:modified_time" content="2022-05-24T15:21:59.211Z">
 <meta property="article:author" content="可乐虎">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="静态网页">
@@ -208,7 +208,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-05-24 22:04:39" itemprop="dateModified" datetime="2022-05-24T22:04:39+08:00">2022-05-24</time>
+      <time title="Modified: 2022-05-24 23:21:59" itemprop="dateModified" datetime="2022-05-24T23:21:59+08:00">2022-05-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -231,7 +231,8 @@
     
     <div class="post-body" itemprop="articleBody">
         <h3 id="Hexo-工作原理"><a href="#Hexo-工作原理" class="headerlink" title="Hexo 工作原理"></a>Hexo 工作原理</h3><p>Hexo 博客程序并不像 WordPress 一样，Hexo 更像是一个静态站点生成器，即你配置好网站后，利用 Hexo 可以自动生成一个静态网站，其静态站点位置在网站目录下的 public 目录下。</p>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>准备工作包含两部分：安装 Git，安装 Node.js。<br>&lt; !– more –&gt;</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>准备工作包含两部分：安装 Git，安装 Node.js。</p>
+<span id="more"></span>
 <h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install -y git</span><br><span class="line">git version  #显示版本号即为安装成功</span><br></pre></td></tr></table></figure>
 <h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>首先在Node.js官方网站寻找适合自己服务器相应版本的下载地址。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz</span><br><span class="line">tar xf node-v14.15.4-linux-x64.tar.xz</span><br><span class="line">mv node-v14.15.4-linux-x64 /usr/local/nodejs</span><br><span class="line">rm -f node-v14.15.4-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>

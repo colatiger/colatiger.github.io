@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://cf-ipfs.com/ipfs/QmXm6cgnYZ4RrRBoiMwDioDvvhHmtauxqSBYEYxcaphRD7">
 <meta property="og:image" content="https://cf-ipfs.com/ipfs/QmT8damSA6DML2CJyHjNgpgxuwdFVgjtmUEEru39wbjLU2">
 <meta property="article:published_time" content="2021-12-24T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-24T14:34:38.370Z">
+<meta property="article:modified_time" content="2022-05-24T15:21:26.939Z">
 <meta property="article:author" content="可乐虎">
 <meta property="article:tag" content="clash">
 <meta property="article:tag" content="bypass">
@@ -213,7 +213,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-05-24 22:34:38" itemprop="dateModified" datetime="2022-05-24T22:34:38+08:00">2022-05-24</time>
+      <time title="Modified: 2022-05-24 23:21:26" itemprop="dateModified" datetime="2022-05-24T23:21:26+08:00">2022-05-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -236,8 +236,8 @@
     
     <div class="post-body" itemprop="articleBody">
         <h3 id="clash-的模式介绍"><a href="#clash-的模式介绍" class="headerlink" title="clash 的模式介绍"></a>clash 的模式介绍</h3><ol>
-<li><p>clash 默认提供的是端口代理，所以需要开启系统代理（system proxy）来对浏览器的所有网络访问进行代理（浏览器默认走的系统代理，CFW 中打开系统代理会设置 windows 系统设置下，代理部分的系统代理为 127.0.0.1:Mixed-port），对于 windows 中部分软件不走系统代理的，则要单独指定其代理才能成功代理（如 telegram），而 UWP，还需要使用 UWP Loopback 解除其可能导致的 bug 问题。<br>&lt; !– more –&gt;</p>
-</li>
+<li><p>clash 默认提供的是端口代理，所以需要开启系统代理（system proxy）来对浏览器的所有网络访问进行代理（浏览器默认走的系统代理，CFW 中打开系统代理会设置 windows 系统设置下，代理部分的系统代理为 127.0.0.1:Mixed-port），对于 windows 中部分软件不走系统代理的，则要单独指定其代理才能成功代理（如 telegram），而 UWP，还需要使用 UWP Loopback 解除其可能导致的 bug 问题。</p>
+<span id="more"></span></li>
 <li><p>clash 提供三种代理模式，分别为 Global, Rule, Direct, clash premium 版本提供 Script 模式。这四种模式指的是对于所有通过端口代理软件访问的网络请求（后简略为 clash 网络请求）的不同配置。<br><img src="https://cf-ipfs.com/ipfs/QmdGt6rDitnVsZ3b8VGDPJZwky3Ep7oNaRAkvFFcLLfKJf"><br>在四种模式下，Golbal 指的是全局代理的模式，即所有 clash 网络请求走固定一个代理；Rule 指的是按照设置的规则走所需的代理的模式，即所有 clash 网络请求根据相应的 rules 的规则，去匹配对应的策略组，最终匹配到策略组中选择的代理或者直接匹配到指定的代理；Direct 指的是直连的模式，即所有的 clash 网络请求直接访问，不走任何策略组中的任何代理。Script 模式则是对 Rule 模式的补充，主要是针对特殊的代理请求等做个人的设置，此处不做介绍，建议看 <a target="_blank" rel="noopener" href="https://github.com/Dreamacro/clash/wiki/premium-core-features#script" title="官方 Wiki">官方 Wiki</a> 或 Wiki 中指出的 <a target="_blank" rel="noopener" href="https://lancellc.gitbook.io/clash/clash-config-file/script" title="文档">文档</a> 。<br>Rule 模式中，规则有多种方式对clash 网络请求进行匹配，然后根据从上往下，按照第一个匹配到的规则走相对应设置的 代理或者策略组。如果是代理，则直接走对应的代理，如果是策略组，则按照策略组中选择可能动态调整。<br>一般规则部分最好找现成的或者按照默认的，这样覆盖面比较全面，会对需要走流媒体的走流媒体以保证足够好的网络访问，如果需要自己制作，则找找各种教程，这里仅提供 <a target="_blank" rel="noopener" href="https://github.com/Dreamacro/clash/wiki/configuration#rules" title="官方 Wiki">官方 Wiki</a> 或者 Wiki 中指出的 <a target="_blank" rel="noopener" href="https://lancellc.gitbook.io/clash/clash-config-file/rules" title="文档">文档</a> 作为参考。</p>
 </li>
 <li><p>对于不走系统代理的软件的处理，或者有所有的网络请求都走规则的想法，包括终端（当然，也可以单独对其设置代理）等，则需要使用 TAP 模式和 TUN 模式。此处给出 CFW 的 <a target="_blank" rel="noopener" href="https://docs.cfw.lbyczf.com/contents/tap.html" title="TAP 配置文档">TAP 配置文档</a> 和 <a target="_blank" rel="noopener" href="https://docs.cfw.lbyczf.com/contents/tun.html" title="TUN 配置文档">TUN 配置文档</a> 以供参考。</p>
