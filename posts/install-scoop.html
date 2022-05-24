@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ZH-cn">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huwo.club","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Scoop介绍windows下的安装源搜索工具，有点类似centos下的yum和Ubuntu下的apt。用这个拉下来安装的软件没有广告。 安装条件win7 +powershell 3+ 查看当前版本 1$PSVersionTable.PSVersion &lt; !– more –&gt;更改脚本执行的策略 1234567set-executionpolicy remotesigned -s cu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scoop的安装及基本使用">
+<meta property="og:url" content="http://www.huwo.club/posts/install-scoop.html">
+<meta property="og:site_name" content="虎窝博客">
+<meta property="og:description" content="Scoop介绍windows下的安装源搜索工具，有点类似centos下的yum和Ubuntu下的apt。用这个拉下来安装的软件没有广告。 安装条件win7 +powershell 3+ 查看当前版本 1$PSVersionTable.PSVersion &lt; !– more –&gt;更改脚本执行的策略 1234567set-executionpolicy remotesigned -s cu">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-24T14:04:09.575Z">
+<meta property="article:author" content="可乐虎">
+<meta property="article:tag" content="scoop">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://www.huwo.club/posts/install-scoop">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ZH-cn","comments":true,"permalink":"http://www.huwo.club/posts/install-scoop.html","path":"/posts/install-scoop.html","title":"Scoop的安装及基本使用"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Scoop的安装及基本使用 | 虎窝博客</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">虎窝博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">分享互联网知识</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scoop%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">Scoop介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%9D%A1%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">安装条件</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">可乐虎</p>
+  <div class="site-description" itemprop="description">虎窝博客，分享博主日常网络生活中遇到的各种网络技术和知识。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ZH-cn">
+    <link itemprop="mainEntityOfPage" href="http://www.huwo.club/posts/install-scoop.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="可乐虎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="虎窝博客">
+      <meta itemprop="description" content="虎窝博客，分享博主日常网络生活中遇到的各种网络技术和知识。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Scoop的安装及基本使用 | 虎窝博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Scoop的安装及基本使用
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-12-10 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-10T00:00:00+08:00">2021-12-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-05-24 22:04:09" itemprop="dateModified" datetime="2022-05-24T22:04:09+08:00">2022-05-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">网络技术</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="Scoop介绍"><a href="#Scoop介绍" class="headerlink" title="Scoop介绍"></a>Scoop介绍</h3><p>windows下的安装源搜索工具，有点类似centos下的yum和Ubuntu下的apt。用这个拉下来安装的软件没有广告。</p>
+<h3 id="安装条件"><a href="#安装条件" class="headerlink" title="安装条件"></a>安装条件</h3><p>win7 +<br>powershell 3+</p>
+<p>查看当前版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$PSVersionTable.PSVersion</span><br></pre></td></tr></table></figure>
+<p>&lt; !– more –&gt;<br>更改脚本执行的策略</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set-executionpolicy remotesigned -s cu</span><br><span class="line">```</span><br><span class="line">安装</span><br><span class="line">设置scoop环境变量</span><br><span class="line">````linux</span><br><span class="line">$env:SCOOP=&#x27;D:\Scoop&#x27;</span><br><span class="line">[Environment]::SetEnvironmentVariable(&#x27;SCOOP&#x27;,$env:SCOOP,&#x27;User&#x27;)</span><br></pre></td></tr></table></figure>
+<p>设置scoop global 环境变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$env:SCOOP_GLOBAL=&#x27;D:\ScoopGlobalApps&#x27;</span><br><span class="line">[Environment]::SetEnvironmentVariable(&#x27;SCOOP_GLOBAL&#x27;,$env:SCOOP_GLOBAL,&#x27;User&#x27;)</span><br></pre></td></tr></table></figure>
+<p>这里设置环境变量第三个参数User表示用户级别，Machine表示系统级别。Machine没权限的话，可以手动去环境变量设置。</p>
+<p>安装命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iex (new-object net.webclient).downloadstring(&#x27;https://get.scoop.sh&#x27;)</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iwr-useb get.scoop.sh|iex</span><br></pre></td></tr></table></figure>
+<p>卸载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">scoop uninstall scoop</span><br><span class="line">`````</span><br><span class="line">这个卸载，会删除你配置的scoop下面的所有软件，非常危险。</span><br><span class="line"></span><br><span class="line">使用 github mirror 添加 bucket 库</span><br><span class="line">本身的main bucket源很少，故增加几个较多的bucket</span><br><span class="line">镜像1: https://hub.fastgit.org/</span><br><span class="line">镜像2: https://ghproxy.com/</span><br><span class="line">````linux</span><br><span class="line">scoop bucket add main &#x27;https://hub.fastgit.org/ScoopInstaller/Main&#x27;</span><br><span class="line">scoop bucket add extras &#x27;https://hub.fastgit.org/lukesampson/scoop-extras&#x27;</span><br><span class="line">scoop bucket add versions &#x27;https://hub.fastgit.org/ScoopInstaller/Versions&#x27;</span><br><span class="line">scoop bucket add jetbrains &#x27;https://hub.fastgit.org/Ash258/Scoop-JetBrains&#x27;</span><br><span class="line">scoop bucket add dorado &#x27;https://hub.fastgit.org/h404bi/dorado&#x27;</span><br></pre></td></tr></table></figure>
+<p>查找软件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop search  [app的名称]</span><br></pre></td></tr></table></figure>
+<p>安装软件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install  [app的名称]</span><br></pre></td></tr></table></figure>
+<p>卸载软件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop uninstall  [app的名称]</span><br></pre></td></tr></table></figure>
+
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/scoop/" rel="tag"># scoop</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/build-hexo-blog.html" rel="prev" title="手把手教你搭建 Hexo 博客">
+                  <i class="fa fa-chevron-left"></i> 手把手教你搭建 Hexo 博客
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/BTPan+Bitwarden.html" rel="next" title="宝塔面板+Bitwarden搭建私有密码管理器">
+                  宝塔面板+Bitwarden搭建私有密码管理器 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">可乐虎</span>
+</div>
+
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+-->
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
