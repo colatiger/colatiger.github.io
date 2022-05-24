@@ -203,7 +203,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-05-24 22:35:33" itemprop="dateModified" datetime="2022-05-24T22:35:33+08:00">2022-05-24</time>
+      <time title="Modified: 2022-05-24 23:22:21" itemprop="dateModified" datetime="2022-05-24T23:22:21+08:00">2022-05-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -227,48 +227,14 @@
     <div class="post-body" itemprop="articleBody">
           <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>甲骨文VPS默认是通过密钥文件登陆机器，无法直接用账户密码，所以需要做一些改动 让机器能直接通过root密码登陆。</p>
 <h3 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h3><p>首先我们需要用密钥登陆VPS，甲骨文Centos系统默认用户是：opc</p>
-<p><img src="https://bafybeib5ozgd2meeu4vdqw23lqznpdvt35gmjqvaoroxg373ka4hjpvdfm.ipfs.dweb.link/1.png"></p>
-<p><strong>点击连接以后选择导入密钥，确定登陆机器</strong></p>
-<p><img src="https://bafybeibfmmrtxlkxkuyhuf2w2grq57oppt7dna3tmurifiik6l33c67ayu.ipfs.dweb.link/2.png"></p>
-<ul>
-<li><strong>输入命令切换到root权限并修改密码：</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudu su #切换root权限</span><br><span class="line">psddwd #修改密码</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>修改登陆方式</strong></li>
-</ul>
-<ol>
-<li><strong>输入命令：</strong></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /root/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>找到 “ssh-rsa”字样， 按键盘 ” i “ 进入编辑模式，将 ssh-rsa 前面的内容全部删除</strong></p>
-<p><img src="https://bafybeifxyxxjkjokeymct5qwxoswzoednrg7bpbnfxo5tcxp2ojs7l5i5u.ipfs.dweb.link/3.png"></p>
-<p><strong>修改以后按 “Esc” 键退出编辑模式，” :wq “ 回车保存</strong></p>
-<p><img src="https://bafybeihg7obzrcyelnkks434ifojujofr6e7isbuogp7pprq6cy6zc2kaq.ipfs.dweb.link/4.png"></p>
-<ol start="2">
-<li><strong>修改第二处，输入命令：</strong></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
-
-<p><strong>找到 “#PermitRootLogin” 字样，去掉前面的 “#” 号，如下：</strong></p>
-<p>（注意 ” YES “ 后面有一个空格）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes         #允许root登录</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://bafybeidyqp3234yvzjbsb4aognx23h5bpnj6j67t6vg2e3jl6afselyc4q.ipfs.dweb.link/5.png"></p>
-<p><strong>修改以后按 “Esc” 键退出编辑模式，” :wq “ 回车保存</strong></p>
-<ul>
-<li><strong>找到 “ PasswordAuthentication no ” 字样，把 “no” 改成 “yes” 如下</strong></li>
-</ul>
-<p>（注意 ” NO “ 后面有一个空格需要保留的）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PasswordAuthentication yes #开启密码登录</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://bafybeidwllgq5uvnrix7zhekiaefrng4skk46blsrmakmhh2lavvovm7im.ipfs.dweb.link/6.png"></p>
-<p><strong>修改以后按 “Esc” 键退出编辑模式，” :wq “ 回车保存</strong></p>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>到这一步基本完成，reboot 重启VPS后用root密码登陆即可。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/oraclevps_root.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -330,7 +296,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-05-24 22:34:38" itemprop="dateModified" datetime="2022-05-24T22:34:38+08:00">2022-05-24</time>
+      <time title="Modified: 2022-05-24 23:21:26" itemprop="dateModified" datetime="2022-05-24T23:21:26+08:00">2022-05-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -353,25 +319,15 @@
     
     <div class="post-body" itemprop="articleBody">
           <h3 id="clash-的模式介绍"><a href="#clash-的模式介绍" class="headerlink" title="clash 的模式介绍"></a>clash 的模式介绍</h3><ol>
-<li><p>clash 默认提供的是端口代理，所以需要开启系统代理（system proxy）来对浏览器的所有网络访问进行代理（浏览器默认走的系统代理，CFW 中打开系统代理会设置 windows 系统设置下，代理部分的系统代理为 127.0.0.1:Mixed-port），对于 windows 中部分软件不走系统代理的，则要单独指定其代理才能成功代理（如 telegram），而 UWP，还需要使用 UWP Loopback 解除其可能导致的 bug 问题。<br>&lt; !– more –&gt;</p>
-</li>
-<li><p>clash 提供三种代理模式，分别为 Global, Rule, Direct, clash premium 版本提供 Script 模式。这四种模式指的是对于所有通过端口代理软件访问的网络请求（后简略为 clash 网络请求）的不同配置。<br><img src="https://cf-ipfs.com/ipfs/QmdGt6rDitnVsZ3b8VGDPJZwky3Ep7oNaRAkvFFcLLfKJf"><br>在四种模式下，Golbal 指的是全局代理的模式，即所有 clash 网络请求走固定一个代理；Rule 指的是按照设置的规则走所需的代理的模式，即所有 clash 网络请求根据相应的 rules 的规则，去匹配对应的策略组，最终匹配到策略组中选择的代理或者直接匹配到指定的代理；Direct 指的是直连的模式，即所有的 clash 网络请求直接访问，不走任何策略组中的任何代理。Script 模式则是对 Rule 模式的补充，主要是针对特殊的代理请求等做个人的设置，此处不做介绍，建议看 <a target="_blank" rel="noopener" href="https://github.com/Dreamacro/clash/wiki/premium-core-features#script" title="官方 Wiki">官方 Wiki</a> 或 Wiki 中指出的 <a target="_blank" rel="noopener" href="https://lancellc.gitbook.io/clash/clash-config-file/script" title="文档">文档</a> 。<br>Rule 模式中，规则有多种方式对clash 网络请求进行匹配，然后根据从上往下，按照第一个匹配到的规则走相对应设置的 代理或者策略组。如果是代理，则直接走对应的代理，如果是策略组，则按照策略组中选择可能动态调整。<br>一般规则部分最好找现成的或者按照默认的，这样覆盖面比较全面，会对需要走流媒体的走流媒体以保证足够好的网络访问，如果需要自己制作，则找找各种教程，这里仅提供 <a target="_blank" rel="noopener" href="https://github.com/Dreamacro/clash/wiki/configuration#rules" title="官方 Wiki">官方 Wiki</a> 或者 Wiki 中指出的 <a target="_blank" rel="noopener" href="https://lancellc.gitbook.io/clash/clash-config-file/rules" title="文档">文档</a> 作为参考。</p>
-</li>
-<li><p>对于不走系统代理的软件的处理，或者有所有的网络请求都走规则的想法，包括终端（当然，也可以单独对其设置代理）等，则需要使用 TAP 模式和 TUN 模式。此处给出 CFW 的 <a target="_blank" rel="noopener" href="https://docs.cfw.lbyczf.com/contents/tap.html" title="TAP 配置文档">TAP 配置文档</a> 和 <a target="_blank" rel="noopener" href="https://docs.cfw.lbyczf.com/contents/tun.html" title="TUN 配置文档">TUN 配置文档</a> 以供参考。</p>
-</li>
-<li><h3 id="系统代理的两种方式"><a href="#系统代理的两种方式" class="headerlink" title="系统代理的两种方式"></a>系统代理的两种方式</h3><p>Bypass（http模式）和 PAC 模式是系统代理的两种方式。</p>
-<h5 id="1、Bypass-模式"><a href="#1、Bypass-模式" class="headerlink" title="1、Bypass 模式"></a>1、Bypass 模式</h5><p>Bypass匹配的内容将不走系统代理，也就不会走端口代理。<br>匹配规则写法：<br>打开设置界面<br><img src="https://cf-ipfs.com/ipfs/QmXm6cgnYZ4RrRBoiMwDioDvvhHmtauxqSBYEYxcaphRD7"><br>匹配以baidu.com, <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a>. 等以 baidu.com 为结尾的域名</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bypass:</span><br><span class="line">  - &quot;*baidu.com&quot;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>不匹配baidu.com, 匹配 <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a>, wenku.baidu.com 等以 baidu.com 为根域名的三级域名（四级及以上未测试）|</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bypass:</span><br><span class="line">- &quot;*.baidu.com&quot;</span><br></pre></td></tr></table></figure>
-
-<p>仅匹配 baidu.com 的域名|</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bypass:</span><br><span class="line">- baidu.com  #此时可不加引号，加上也无妨</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cf-ipfs.com/ipfs/QmT8damSA6DML2CJyHjNgpgxuwdFVgjtmUEEru39wbjLU2"><br>注意，如果不走代理，仍然会走 dns ，如果系统的 dns 的解析有误，仍然可能访问有误。</p>
-<h5 id="2、PAC-模式"><a href="#2、PAC-模式" class="headerlink" title="2、PAC 模式"></a>2、PAC 模式</h5><p>PAC 模式则是按照 pac 文件提前对走系统代理的网络请求进行分流（直连或者走特定类型的端口代理），有时系统应用或者奇怪的代理无效问题可以切换到这个模式以解决。</p>
-
+<li><p>clash 默认提供的是端口代理，所以需要开启系统代理（system proxy）来对浏览器的所有网络访问进行代理（浏览器默认走的系统代理，CFW 中打开系统代理会设置 windows 系统设置下，代理部分的系统代理为 127.0.0.1:Mixed-port），对于 windows 中部分软件不走系统代理的，则要单独指定其代理才能成功代理（如 telegram），而 UWP，还需要使用 UWP Loopback 解除其可能导致的 bug 问题。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/clash_bypass.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -433,7 +389,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-05-24 22:33:26" itemprop="dateModified" datetime="2022-05-24T22:33:26+08:00">2022-05-24</time>
+      <time title="Modified: 2022-05-24 23:21:49" itemprop="dateModified" datetime="2022-05-24T23:21:49+08:00">2022-05-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -455,34 +411,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>虽然Bitwarden官方提供云管理服务，但真的安全吗？万一有天官网无法访问或是倒闭了呢？因此我们将密码库放在自己的VPS上，会要省心很多。<br>&lt; !– more –&gt;<br><img src="https://cf-ipfs.com/ipfs/QmQSsx3fWEm1Zsu23JPaC1JE2dsjQLcN9aNLMJBvKoUjUB" alt="bitwarden01"></p>
-<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
-<li><p>准备解析好并且开启SSL服务的域名</p>
-</li>
-<li><p>安装好宝塔面板* 安装好Docker管理器</p>
-</li>
-<li><p>创建Docker容器</p>
-</li>
-<li><p>打开Docker管理器，获取bitwardenrs镜像bitwardenrs&#x2F;server<br><img src="https://cf-ipfs.com/ipfs/QmZEbyMv23v36M6eWnUnessAnzxkM7zJS2VPBAvbZTxojw" alt="bitwarden02"></p>
-</li>
-<li><p>点击创建容器按钮</p>
-</li>
-<li><p>填写端口映射中的容器端口：80,服务端口：6666（可以自定义）</p>
-</li>
-<li><p>填写目录映射中的服务器目录：&#x2F;www&#x2F;wwwroot&#x2F;bitwarden该目录可以自定义，容器目录：&#x2F;data</p>
-</li>
-<li><p>填写内存配额，根据自己服务器的配置按需填写</p>
-</li>
-<li><p>提交创建容器<br><img src="https://cf-ipfs.com/ipfs/QmNZswHurVBmrHuEbKdkEbH6nVbqLSgZx2MtFwQ1Sspk7u" alt="bitwarden03"></p>
-</li>
-<li><p>点击容器名称，修改容器名称为Bitwarden</p>
-</li>
-</ul>
-<h4 id="新建网站进行反向代理"><a href="#新建网站进行反向代理" class="headerlink" title="新建网站进行反向代理"></a>新建网站进行反向代理</h4><p><img src="https://cf-ipfs.com/ipfs/QmWf9YAaJmaoV6SVAe1Eqa2SwjQKt9Ybk6LdoJzLJ5UwXD" alt="bitwarden03"></p>
-<h4 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h4><h5 id="网页端"><a href="#网页端" class="headerlink" title="网页端"></a>网页端</h5><p><img src="https://cf-ipfs.com/ipfs/QmYMLBHdU6XxSjwj9d13UMoksS6GwuwGVc6SbjpXo27eJq" alt="网页端"></p>
-<h5 id="浏览器插件端"><a href="#浏览器插件端" class="headerlink" title="浏览器插件端"></a>浏览器插件端</h5><p><img src="https://cf-ipfs.com/ipfs/QmaJNNvxZ73jdPSgyEmrkPw6NWy66SJY8jJVVZ49xAyNkB" alt="浏览器插件"></p>
-<h5 id="手机端"><a href="#手机端" class="headerlink" title="手机端"></a>手机端</h5><p>可直接在应用商店下载，记得在设置中开启两步验证。</p>
-
+          <p>虽然Bitwarden官方提供云管理服务，但真的安全吗？万一有天官网无法访问或是倒闭了呢？因此我们将密码库放在自己的VPS上，会要省心很多。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/BTPan+Bitwarden.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -544,7 +481,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-05-24 22:04:09" itemprop="dateModified" datetime="2022-05-24T22:04:09+08:00">2022-05-24</time>
+      <time title="Modified: 2022-05-24 23:21:37" itemprop="dateModified" datetime="2022-05-24T23:21:37+08:00">2022-05-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -570,26 +507,14 @@
 <h3 id="安装条件"><a href="#安装条件" class="headerlink" title="安装条件"></a>安装条件</h3><p>win7 +<br>powershell 3+</p>
 <p>查看当前版本</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$PSVersionTable.PSVersion</span><br></pre></td></tr></table></figure>
-<p>&lt; !– more –&gt;<br>更改脚本执行的策略</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set-executionpolicy remotesigned -s cu</span><br><span class="line">```</span><br><span class="line">安装</span><br><span class="line">设置scoop环境变量</span><br><span class="line">````linux</span><br><span class="line">$env:SCOOP=&#x27;D:\Scoop&#x27;</span><br><span class="line">[Environment]::SetEnvironmentVariable(&#x27;SCOOP&#x27;,$env:SCOOP,&#x27;User&#x27;)</span><br></pre></td></tr></table></figure>
-<p>设置scoop global 环境变量</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$env:SCOOP_GLOBAL=&#x27;D:\ScoopGlobalApps&#x27;</span><br><span class="line">[Environment]::SetEnvironmentVariable(&#x27;SCOOP_GLOBAL&#x27;,$env:SCOOP_GLOBAL,&#x27;User&#x27;)</span><br></pre></td></tr></table></figure>
-<p>这里设置环境变量第三个参数User表示用户级别，Machine表示系统级别。Machine没权限的话，可以手动去环境变量设置。</p>
-<p>安装命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iex (new-object net.webclient).downloadstring(&#x27;https://get.scoop.sh&#x27;)</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iwr-useb get.scoop.sh|iex</span><br></pre></td></tr></table></figure>
-<p>卸载</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">scoop uninstall scoop</span><br><span class="line">`````</span><br><span class="line">这个卸载，会删除你配置的scoop下面的所有软件，非常危险。</span><br><span class="line"></span><br><span class="line">使用 github mirror 添加 bucket 库</span><br><span class="line">本身的main bucket源很少，故增加几个较多的bucket</span><br><span class="line">镜像1: https://hub.fastgit.org/</span><br><span class="line">镜像2: https://ghproxy.com/</span><br><span class="line">````linux</span><br><span class="line">scoop bucket add main &#x27;https://hub.fastgit.org/ScoopInstaller/Main&#x27;</span><br><span class="line">scoop bucket add extras &#x27;https://hub.fastgit.org/lukesampson/scoop-extras&#x27;</span><br><span class="line">scoop bucket add versions &#x27;https://hub.fastgit.org/ScoopInstaller/Versions&#x27;</span><br><span class="line">scoop bucket add jetbrains &#x27;https://hub.fastgit.org/Ash258/Scoop-JetBrains&#x27;</span><br><span class="line">scoop bucket add dorado &#x27;https://hub.fastgit.org/h404bi/dorado&#x27;</span><br></pre></td></tr></table></figure>
-<p>查找软件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop search  [app的名称]</span><br></pre></td></tr></table></figure>
-<p>安装软件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install  [app的名称]</span><br></pre></td></tr></table></figure>
-<p>卸载软件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop uninstall  [app的名称]</span><br></pre></td></tr></table></figure>
-
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/install-scoop.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -651,7 +576,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-05-24 22:04:39" itemprop="dateModified" datetime="2022-05-24T22:04:39+08:00">2022-05-24</time>
+      <time title="Modified: 2022-05-24 23:21:59" itemprop="dateModified" datetime="2022-05-24T23:21:59+08:00">2022-05-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -674,28 +599,15 @@
     
     <div class="post-body" itemprop="articleBody">
           <h3 id="Hexo-工作原理"><a href="#Hexo-工作原理" class="headerlink" title="Hexo 工作原理"></a>Hexo 工作原理</h3><p>Hexo 博客程序并不像 WordPress 一样，Hexo 更像是一个静态站点生成器，即你配置好网站后，利用 Hexo 可以自动生成一个静态网站，其静态站点位置在网站目录下的 public 目录下。</p>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>准备工作包含两部分：安装 Git，安装 Node.js。<br>&lt; !– more –&gt;</p>
-<h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install -y git</span><br><span class="line">git version  #显示版本号即为安装成功</span><br></pre></td></tr></table></figure>
-<h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>首先在Node.js官方网站寻找适合自己服务器相应版本的下载地址。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz</span><br><span class="line">tar xf node-v14.15.4-linux-x64.tar.xz</span><br><span class="line">mv node-v14.15.4-linux-x64 /usr/local/nodejs</span><br><span class="line">rm -f node-v14.15.4-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
-<p>之后设置软连接，方便以后调用命令。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/nodejs/bin/node /usr/local/bin/node</span><br><span class="line">ln -s /usr/local/nodejs/bin/npm /usr/local/bin/npm</span><br><span class="line">ln -s /usr/local/nodejs/bin/npx /usr/local/bin/npx</span><br></pre></td></tr></table></figure>
-<p>因为国内使用npm速度慢，所以更换下npm的源指向淘宝镜像，所以之后使用cnpm即可</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line">ln -s /usr/local/nodejs/bin/cnpm /usr/local/bin/cnpm</span><br></pre></td></tr></table></figure>
-<p>检查是否安装成功，键入下面命令后显示版本号即对应安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line">cnpm -v</span><br></pre></td></tr></table></figure>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br><span class="line">ln -s /usr/local/nodejs/bin/hexo /usr/local/bin/hexo</span><br><span class="line">hexo -v		#显示版本号即安装成功</span><br></pre></td></tr></table></figure>
-<h4 id="建站及配置"><a href="#建站及配置" class="headerlink" title="建站及配置"></a>建站及配置</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">mkdir hexo</span><br><span class="line">hexo init hexo/</span><br><span class="line">cd hexo</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>网站信息在_config.yml文件中，详情参照Hexo使用文档。</p>
-<h4 id="发布网站"><a href="#发布网站" class="headerlink" title="发布网站"></a>发布网站</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g	#生成静态网站</span><br></pre></td></tr></table></figure>
-<p>网站目录为目录中的public目录。</p>
-<h3 id="后续使用"><a href="#后续使用" class="headerlink" title="后续使用"></a>后续使用</h3><p>之后每次发布文章，仅需将编辑好的md文件上传至建站所选目录下的source&#x2F;_posts&#x2F;下，之后使用hexo g 更新网站即可。</p>
-<p>注意：安装cnpm成功，终端却提示无法找到cnpm命令解决办法<br>出现这种问题应该是没正确建立软链，我们手动建立一下<br>先查到cnpm安装在哪</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo find / -name cnpm </span><br></pre></td></tr></table></figure>
-<p>如果查到安装位置为：&#x2F;usr&#x2F;local&#x2F;bin&#x2F;Node.js&#x2F;bin&#x2F;cnpm<br>建立软链</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/local/bin/Node.js/bin/cnpm /usr/local/bin/cnpm </span><br></pre></td></tr></table></figure>
-<p>问题即可解决。</p>
-
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>准备工作包含两部分：安装 Git，安装 Node.js。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/build-hexo-blog.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
